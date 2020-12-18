@@ -1,0 +1,134 @@
+/* _content/JobSityChat.UI/Shared/MainLayout.razor.rz.scp.css */
+.page[b-jacnevfg6m] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.main[b-jacnevfg6m] {
+    flex: 1;
+}
+
+.sidebar[b-jacnevfg6m] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-jacnevfg6m] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-jacnevfg6m]  a, .top-row .btn-link[b-jacnevfg6m] {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .top-row a:first-child[b-jacnevfg6m] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-jacnevfg6m] {
+        display: none;
+    }
+
+    .top-row.auth[b-jacnevfg6m] {
+        justify-content: space-between;
+    }
+
+    .top-row a[b-jacnevfg6m], .top-row .btn-link[b-jacnevfg6m] {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-jacnevfg6m] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-jacnevfg6m] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-jacnevfg6m] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .main > div[b-jacnevfg6m] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+/* _content/JobSityChat.UI/Shared/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-gycav7l6hn] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-gycav7l6hn] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-gycav7l6hn] {
+    font-size: 1.1rem;
+}
+
+.oi[b-gycav7l6hn] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-gycav7l6hn] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-gycav7l6hn] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-gycav7l6hn] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-gycav7l6hn]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+.nav-item[b-gycav7l6hn]  a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+}
+
+.nav-item[b-gycav7l6hn]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-gycav7l6hn] {
+        display: none;
+    }
+
+    .collapse[b-gycav7l6hn] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
