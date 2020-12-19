@@ -54,7 +54,7 @@ namespace JobSityChat.StockBot.MBQueues
                 var result = JsonConvert.SerializeObject(stock);
 
                 //Calling the producer so the API can receive the data
-                
+                _producer.SendStockData(stock);
             };
 
             _channel.BasicConsume(queue: MBQueueConstants.STOCK_QUEUE_REQUEST,
