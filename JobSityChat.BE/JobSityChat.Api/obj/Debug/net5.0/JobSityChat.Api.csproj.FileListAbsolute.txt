@@ -35,3 +35,8 @@
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/obj/Debug/net5.0/ref/JobSityChat.Api.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/obj/Debug/net5.0/JobSityChat.Api.pdb
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/obj/Debug/net5.0/JobSityChat.Api.genruntimeconfig.cache
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Core.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Infrastructure.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Infrastructure.pdb
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Core.pdb
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/obj/Debug/net5.0/JobSityChat.Api.csprojAssemblyReference.cache

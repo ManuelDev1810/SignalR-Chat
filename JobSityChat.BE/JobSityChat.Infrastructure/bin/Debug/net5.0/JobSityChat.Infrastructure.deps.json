@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "JobSityChat.Infrastructure/1.0.0": {
+        "dependencies": {
+          "JobSityChat.Core": "1.0.0"
+        },
+        "runtime": {
+          "JobSityChat.Infrastructure.dll": {}
+        }
+      },
+      "JobSityChat.Core/1.0.0": {
+        "runtime": {
+          "JobSityChat.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "JobSityChat.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JobSityChat.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
