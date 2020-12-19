@@ -97,8 +97,9 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 47 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+#line 38 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
        
+
     private HubConnection hubConnection;
     private List<string> messages = new List<string>();
     private string userMessage;
@@ -113,7 +114,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         //Making the hub connection
         hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("/jobsity_chathub"))
+            .WithUrl(NavigationManager.ToAbsoluteUri("https://localhost:5002/jobsity_chathub"))
             .Build();
 
         //Receving the message from the API
@@ -123,11 +124,21 @@ using Microsoft.AspNetCore.SignalR.Client;
             messages.Add(recceiveMessage);
             StateHasChanged();
         });
+
+        await hubConnection.StartAsync();
+
+        //NOTE
+        //REDIRECT TO ERROR PAGE WHEN AN ERROR OCCUR
     }
 
     //Sending the message
-    Task Send() =>
-        hubConnection.SendAsync("SendMessage", userName, userName);
+    public Task Send()
+    {
+        userMessage = String.Empty;
+        return hubConnection.SendAsync("SendMessage",
+                new { UserName = userName, UserMessage = userMessage, CreatedAt = DateTime.Now});
+    }
+
 
     public bool IsConnected =>
         hubConnection.State == HubConnectionState.Connected;
@@ -136,6 +147,7 @@ using Microsoft.AspNetCore.SignalR.Client;
     {
         await hubConnection.DisposeAsync();
     }
+
 
 #line default
 #line hidden

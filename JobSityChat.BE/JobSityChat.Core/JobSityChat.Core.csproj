@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Persistent\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Repository\Interfaces\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Handlers\Interfaces\" />
+  </ItemGroup>
+</Project>
