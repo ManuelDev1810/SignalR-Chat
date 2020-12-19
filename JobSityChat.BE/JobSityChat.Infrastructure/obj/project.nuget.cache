@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KntGF48R8MzHzbq1lmQtG2ZfbIDYnYg7w/byRrvXr0l1ethxAo5ZFWkzLwCey8XJ0czyVhUnZZ1f4e3/dRkt0A==",
+  "dgSpecHash": "BQfNd1Q00YTX8Yr2Ms4XM1pkXinCuIRAJfTSsIRyoiOXQfTwjipOfh/cqVcmdp9/9qsEy1xdZ1zzJX/GuTAsOA==",
   "success": true,
   "projectFilePath": "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure/JobSityChat.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/manueldejesusguerrerovasquez/.nuget/packages/tinycsvparser/2.6.0/tinycsvparser.2.6.0.nupkg.sha512"
+  ],
   "logs": []
 }

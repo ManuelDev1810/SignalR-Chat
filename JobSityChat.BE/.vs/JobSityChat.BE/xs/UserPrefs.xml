@@ -1,10 +1,36 @@
 ﻿<Properties StartupConfiguration="{31A3BD73-2224-4E54-A9AF-EABED90D71F7}|Default">
   <MonoDevelop.Ide.ItemProperties.JobSityChat.Api PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.JobSityChat.StockBot FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.StockBot/MBQueues/StockResponseQueueProducer.cs">
+    <Files>
+      <File FileName="JobSityChat.Api/MBQueues/StockQueueProducer.cs" Line="33" Column="34" />
+      <File FileName="JobSityChat.StockBot/Program.cs" Line="9" Column="47" />
+      <File FileName="JobSityChat.StockBot/MBQueues/StockRequestQueueConsumer.cs" Line="14" Column="52" />
+      <File FileName="JobSityChat.StockBot/MBQueues/StockResponseQueueProducer.cs" Line="8" Column="10" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="JobSityChat.BE" expanded="True" />
+          <Node name="JobSityChat.BE" expanded="True">
+            <Node name="JobSityChat.Core" expanded="True">
+              <Node name="Handlers" expanded="True">
+                <Node name="Interfaces" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="JobSityChat.Infrastructure" expanded="True">
+              <Node name="Services" expanded="True">
+                <Node name="Handlers" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="JobSityChat.StockBot" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="MBQueues" expanded="True">
+                <Node name="StockResponseQueueProducer.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>

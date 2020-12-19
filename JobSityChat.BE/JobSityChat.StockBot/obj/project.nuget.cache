@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "/bwZlXFBkzp7p8GmNxRo9DTMY6wOJo26vWGDg4A2i5zVtoZgr+6C/hPBjdx+yq/ZqYSDOFok8ffGfeCrLXswRg==",
+  "success": true,
+  "projectFilePath": "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.StockBot/JobSityChat.StockBot.csproj",
+  "expectedPackageFiles": [
+    "/Users/manueldejesusguerrerovasquez/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/manueldejesusguerrerovasquez/.nuget/packages/rabbitmq.client/6.2.1/rabbitmq.client.6.2.1.nupkg.sha512",
+    "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
+    "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.threading.channels/4.7.1/system.threading.channels.4.7.1.nupkg.sha512",
+    "/Users/manueldejesusguerrerovasquez/.nuget/packages/tinycsvparser/2.6.0/tinycsvparser.2.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}

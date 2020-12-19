@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "TinyCsvParser/2.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/TinyCsvParser.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/TinyCsvParser.dll": {}
+        }
+      },
       "JobSityChat.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -15,6 +24,21 @@
     }
   },
   "libraries": {
+    "TinyCsvParser/2.6.0": {
+      "sha512": "QqfrCRuRT6+IP2UCxSuxvPrZlHgXUwQiSYJhTNwF589JjLlZZuXBUwggKCOhcImnYkpL0CMlBhqYkj85+Gptgg==",
+      "type": "package",
+      "path": "tinycsvparser/2.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/TinyCsvParser.dll",
+        "lib/netstandard1.3/TinyCsvParser.dll",
+        "lib/netstandard2.0/TinyCsvParser.dll",
+        "lib/netstandard2.1/TinyCsvParser.dll",
+        "tinycsvparser.2.6.0.nupkg.sha512",
+        "tinycsvparser.nuspec"
+      ]
+    },
     "JobSityChat.Core/1.0.0": {
       "type": "project",
       "path": "../JobSityChat.Core/JobSityChat.Core.csproj",
@@ -23,7 +47,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "JobSityChat.Core >= 1.0.0"
+      "JobSityChat.Core >= 1.0.0",
+      "TinyCsvParser >= 2.6.0"
     ]
   },
   "packageFolders": {
@@ -66,6 +91,12 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
+        "dependencies": {
+          "TinyCsvParser": {
+            "target": "Package",
+            "version": "[2.6.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
