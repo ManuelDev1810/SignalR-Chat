@@ -90,7 +90,7 @@ using JobSityChat.UI.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/NavMenu.razor"
+#line 18 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

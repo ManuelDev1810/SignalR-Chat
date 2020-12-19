@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace JobSityChat.UI.Pages
+namespace JobSityChat.UI.Shared
 {
     #line hidden
     using System;
@@ -83,14 +83,13 @@ using JobSityChat.UI.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Pages/FetchData.razor"
-using JobSityChat.UI.Data;
+#line 1 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+using Microsoft.AspNetCore.SignalR.Client;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
-    public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class ChatBox : Microsoft.AspNetCore.Components.ComponentBase, IAsyncDisposable
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,19 +97,51 @@ using JobSityChat.UI.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Pages/FetchData.razor"
+#line 47 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
        
-    private WeatherForecast[] forecasts;
+    private HubConnection hubConnection;
+    private List<string> messages = new List<string>();
+    private string userMessage;
+    private string userName;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        //Setting the user
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        userName = user.Identity.Name;
+
+        //Making the hub connection
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/jobsity_chathub"))
+            .Build();
+
+        //Receving the message from the API
+        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        {
+            var recceiveMessage = $"{user}: {message}";
+            messages.Add(recceiveMessage);
+            StateHasChanged();
+        });
+    }
+
+    //Sending the message
+    Task Send() =>
+        hubConnection.SendAsync("SendMessage", userName, userName);
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public async ValueTask DisposeAsync()
+    {
+        await hubConnection.DisposeAsync();
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
     }
 }
 #pragma warning restore 1591

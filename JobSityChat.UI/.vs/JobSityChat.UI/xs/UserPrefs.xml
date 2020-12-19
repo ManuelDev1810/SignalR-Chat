@@ -1,15 +1,21 @@
 ﻿<Properties StartupConfiguration="{8792605D-A5CF-47EE-A481-F87DE5C8D9A4}|Default">
-  <MonoDevelop.Ide.ItemProperties.JobSityChat.UI FirstBuild="True" PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.UI/Startup.cs">
+  <MonoDevelop.Ide.ItemProperties.JobSityChat.UI PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.UI/Shared/ChatBox.razor">
     <Files>
-      <File FileName="JobSityChat.UI/Startup.cs" Line="45" Column="1" />
+      <File FileName="JobSityChat.UI/Shared/ChatBox.razor" Line="9" Column="69" />
+      <File FileName="JobSityChat.UI/Pages/Index.razor" Line="5" Column="1" />
+      <File FileName="JobSityChat.UI/Shared/LoginDisplay.razor" Line="3" Column="50" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="JobSityChat.UI" expanded="True">
             <Node name="JobSityChat.UI" expanded="True">
-              <Node name="Startup.cs" selected="True" />
+              <Node name="Pages" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Shared" expanded="True">
+                <Node name="ChatBox.razor" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -19,7 +25,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor" relfile="JobSityChat.UI/Shared/ChatBox.razor" line="52" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
