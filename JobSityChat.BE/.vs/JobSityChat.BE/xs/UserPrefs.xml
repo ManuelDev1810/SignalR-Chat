@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{8C900D28-8B3F-4937-9D27-68E0A96A64EC}|Default">
   <MonoDevelop.Ide.ItemProperties.JobSityChat.Api PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.Api/Models/MessageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.Api/Startup.cs">
     <Files>
-      <File FileName="JobSityChat.Api/Hubs/ChatHub.cs" Line="12" Column="96" />
-      <File FileName="JobSityChat.Api/Models/MessageViewModel.cs" Line="1" Column="1" />
+      <File FileName="JobSityChat.Infrastructure/Services/Handlers/StockHandler.cs" Line="17" Column="10" />
+      <File FileName="JobSityChat.Api/Hubs/ChatHub.cs" Line="12" Column="54" />
+      <File FileName="JobSityChat.Api/Startup.cs" Line="62" Column="63" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,10 +12,18 @@
           <Node name="JobSityChat.BE" expanded="True">
             <Node name="JobSityChat.Api" expanded="True">
               <Node name="Hubs" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="MessageViewModel.cs" selected="True" />
+              <Node name="Startup.cs" selected="True" />
+            </Node>
+            <Node name="JobSityChat.Core" expanded="True">
+              <Node name="Handlers" expanded="True">
+                <Node name="Interfaces" expanded="True" />
               </Node>
-              <Node name="Properties" expanded="True" />
+              <Node name="Persistent" expanded="True" />
+            </Node>
+            <Node name="JobSityChat.Infrastructure" expanded="True">
+              <Node name="Services" expanded="True">
+                <Node name="Handlers" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -23,10 +32,10 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.JobSityChat.Core FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/Hubs/ChatHub.cs" relfile="JobSityChat.Api/Hubs/ChatHub.cs" line="12" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.JobSityChat.Infrastructure FirstBuild="True" />
 </Properties>

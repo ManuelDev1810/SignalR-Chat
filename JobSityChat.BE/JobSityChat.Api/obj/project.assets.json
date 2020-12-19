@@ -813,6 +813,29 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
+      },
+      "JobSityChat.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/JobSityChat.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JobSityChat.Core.dll": {}
+        }
+      },
+      "JobSityChat.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "JobSityChat.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/JobSityChat.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JobSityChat.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -2450,10 +2473,21 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "JobSityChat.Core/1.0.0": {
+      "type": "project",
+      "path": "../JobSityChat.Core/JobSityChat.Core.csproj",
+      "msbuildProject": "../JobSityChat.Core/JobSityChat.Core.csproj"
+    },
+    "JobSityChat.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../JobSityChat.Infrastructure/JobSityChat.Infrastructure.csproj",
+      "msbuildProject": "../JobSityChat.Infrastructure/JobSityChat.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "JobSityChat.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.1",
       "Microsoft.AspNetCore.Authentication.OpenIdConnect >= 5.0.1",
       "Microsoft.AspNetCore.SignalR >= 1.1.0",
@@ -2484,7 +2518,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure/JobSityChat.Infrastructure.csproj": {
+              "projectPath": "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure/JobSityChat.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

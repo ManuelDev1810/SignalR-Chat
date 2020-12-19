@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using JobSityChat.Api.Hubs;
+using JobSityChat.Core.Handlers.Interfaces;
+using JobSityChat.Infrastructure.Services.Handlers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +30,10 @@ namespace JobSityChat.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //SignalR
             services.AddSignalR();
+
+            //Cors
             services.AddCors(options =>
             {
                 options.AddPolicy("JobSityUI",
@@ -38,15 +43,23 @@ namespace JobSityChat.Api
                         .AllowAnyHeader());
             });
 
+            //Controllers
             services.AddControllers();
+
+            //Swagger
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "JobSityChat.Api", Version = "v1" });
             });
+
+            //ResponseCompression
             services.AddResponseCompression(opts => {
                 opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
                     new[] { "application/oncet-stream" });
             });
+
+            //Dependy Injections
+            services.AddScoped<IStockHandler, StockHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
