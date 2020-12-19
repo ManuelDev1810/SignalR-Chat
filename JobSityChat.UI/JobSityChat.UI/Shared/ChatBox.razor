@@ -1,0 +1,78 @@
+﻿@using Microsoft.AspNetCore.SignalR.Client
+@implements IAsyncDisposable
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+
+<AuthorizeView>
+    <Authorized>
+        <p>Welcome to the chat room <strong>@userName.Substring(0, userName.IndexOf('@'))</strong>, feel free to start a new conversation or get a stock quote.</p>
+        <form class="needs-validation" novalidate>
+            <div class="form-row">
+                <div class="col-md-10 mb-3">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Message:</span>
+                        </div>
+                        <input @bind="userMessage" type="text" class="form-control" placeholder="Write a message..." required>
+                        <button class="btn btn-primary" @onclick="Send" disabled="@(!IsConnected)"><span class="oi oi-media-play"></span></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </Authorized>
+
+    <NotAuthorized>
+        Please log in to start a new conversation
+    </NotAuthorized>
+</AuthorizeView>
+
+@* Messages *@
+
+@foreach (var message in messages)
+{
+    //Waiting for API to be ready
+}
+
+
+
+@code {
+
+    private HubConnection hubConnection;
+    private List<string> messages = new List<string>();
+    private string userMessage;
+    private string userName;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Setting the user
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        userName = user.Identity.Name;
+
+        //Making the hub connection
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/jobsity_chathub"))
+            .Build();
+
+        //Receving the message from the API
+        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        {
+            var recceiveMessage = $"{user}: {message}";
+            messages.Add(recceiveMessage);
+            StateHasChanged();
+        });
+    }
+
+    //Sending the message
+    Task Send() =>
+        hubConnection.SendAsync("SendMessage", userName, userMessage);
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public async ValueTask DisposeAsync()
+    {
+        await hubConnection.DisposeAsync();
+    }
+
+}
