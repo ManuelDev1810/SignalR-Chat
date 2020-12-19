@@ -102,8 +102,9 @@ using Microsoft.AspNetCore.SignalR.Client;
 
     private HubConnection hubConnection;
     private List<string> messages = new List<string>();
-    private string userMessage;
+    private Guid userID;
     private string userName;
+    private string userMessage;
 
     protected override async Task OnInitializedAsync()
     {
@@ -114,8 +115,8 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         //Making the hub connection
         hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("https://localhost:5002/jobsity_chathub"))
-            .Build();
+        .WithUrl(NavigationManager.ToAbsoluteUri("https://localhost:5002/jobsity_chathub"))
+        .Build();
 
         //Receving the message from the API
         hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
@@ -134,9 +135,17 @@ using Microsoft.AspNetCore.SignalR.Client;
     //Sending the message
     public Task Send()
     {
+        var task =  hubConnection.SendAsync("SendMessage",
+                new {
+                    UserName = userName,
+                    UserMessage = userMessage,
+                    CreatedAt = DateTime.Now
+                });
+
+        //Cleaning the message input
         userMessage = String.Empty;
-        return hubConnection.SendAsync("SendMessage",
-                new { UserName = userName, UserMessage = userMessage, CreatedAt = DateTime.Now});
+
+        return task;
     }
 
 

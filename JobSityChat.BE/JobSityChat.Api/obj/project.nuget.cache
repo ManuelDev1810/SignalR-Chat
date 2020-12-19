@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AR/6cQn/oEefryU/Rv0TGq0wQuxuQQT6mbmclg7zEMKyIJKgE0ADM3JuPPZWCaOHhDlrJ1Wf5wfOKNSVq09JDQ==",
+  "dgSpecHash": "an58nyDegypVsvuqooO36RKjxzdzEOo1h+W90qZ5XXuzNkZc1VRhAgHhI1eYtc/RWoT664y+fambNU/+n1uZXg==",
   "success": true,
   "projectFilePath": "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/JobSityChat.Api.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512",
+    "/Users/manueldejesusguerrerovasquez/.nuget/packages/rabbitmq.client/6.2.1/rabbitmq.client.6.2.1.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
@@ -55,7 +56,7 @@
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.identitymodel.tokens.jwt/6.7.1/system.identitymodel.tokens.jwt.6.7.1.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.io/4.3.0/system.io.4.3.0.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.io.pipelines/4.5.2/system.io.pipelines.4.5.2.nupkg.sha512",
-    "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.memory/4.5.1/system.memory.4.5.1.nupkg.sha512",
+    "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.net.websockets.websocketprotocol/4.5.1/system.net.websockets.websocketprotocol.4.5.1.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.reflection/4.3.0/system.reflection.4.3.0.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.reflection.emit/4.3.0/system.reflection.emit.4.3.0.nupkg.sha512",
@@ -67,7 +68,7 @@
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.security.principal.windows/4.5.0/system.security.principal.windows.4.5.0.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512",
-    "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.threading.channels/4.5.0/system.threading.channels.4.5.0.nupkg.sha512",
+    "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.threading.channels/4.7.1/system.threading.channels.4.7.1.nupkg.sha512",
     "/Users/manueldejesusguerrerovasquez/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512"
   ],
   "logs": []

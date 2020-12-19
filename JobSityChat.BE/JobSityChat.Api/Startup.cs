@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using JobSityChat.Api.Hubs;
+using JobSityChat.Api.MBQueues;
 using JobSityChat.Core.Handlers.Interfaces;
+using JobSityChat.Core.MBQueues;
 using JobSityChat.Infrastructure.Services.Handlers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -59,7 +61,8 @@ namespace JobSityChat.Api
             });
 
             //Dependy Injections
-            services.AddScoped<IStockHandler, StockHandler>();
+            services.AddScoped<ICommandHandler, CommandHandler>();
+            services.AddSingleton<IStockQueueProducer, StockQueueProducer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

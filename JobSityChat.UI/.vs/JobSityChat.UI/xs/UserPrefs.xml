@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.ItemProperties.JobSityChat.UI PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.UI/Shared/ChatBox.razor">
     <Files>
-      <File FileName="JobSityChat.UI/Shared/ChatBox.razor" Line="53" Column="65" />
+      <File FileName="JobSityChat.UI/Shared/ChatBox.razor" Line="76" Column="40" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

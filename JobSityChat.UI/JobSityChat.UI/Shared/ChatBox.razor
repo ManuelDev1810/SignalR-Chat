@@ -72,13 +72,17 @@
     //Sending the message
     public Task Send()
     {
-        userMessage = String.Empty;
-        return hubConnection.SendAsync("SendMessage",
+        var task =  hubConnection.SendAsync("SendMessage",
                 new {
                     UserName = userName,
                     UserMessage = userMessage,
                     CreatedAt = DateTime.Now
                 });
+
+        //Cleaning the message input
+        userMessage = String.Empty;
+
+        return task;
     }
 
 
