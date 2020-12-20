@@ -1,18 +1,17 @@
 ﻿<Properties StartupConfiguration="JobSityBE">
   <MonoDevelop.Ide.ItemProperties.JobSityChat.Api PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.ItemProperties.JobSityChat.StockBot PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.Infrastructure.Tests/CommandHandlerTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.Api/Controllers/WeatherForecastController.cs">
     <Files>
-      <File FileName="JobSityChat.Infrastructure.Tests/StockHandlerTests.cs" Line="16" Column="48" />
-      <File FileName="JobSityChat.Infrastructure.Tests/CommandHandlerTests.cs" Line="11" Column="28" />
+      <File FileName="JobSityChat.Api/Controllers/WeatherForecastController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="JobSityChat.BE" expanded="True">
-            <Node name="Tests" expanded="True">
-              <Node name="JobSityChat.Infrastructure.Tests" expanded="True">
-                <Node name="CommandHandlerTests.cs" selected="True" />
+            <Node name="JobSityChat.Api" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="WeatherForecastController.cs" selected="True" />
               </Node>
             </Node>
           </Node>
