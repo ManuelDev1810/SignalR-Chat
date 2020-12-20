@@ -8,20 +8,7 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="JobSityChat.BE" expanded="True" />
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="JobSityChat.BE" expanded="True">
-            <Node name="Tests" expanded="True">
-              <Node name="JobSityChat.Infrastructure.Tests" expanded="True">
-                <Node name="JobSityChat.Infrastructure.Tests" expanded="True">
-                  <Node name="StockHandlerTest" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
+          <Node name="JobSityChat.BE" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
@@ -35,7 +22,8 @@
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="JobSityBE" Name="JobSityBE">
       <Items>
-        <StartupItem ItemId="{E523377A-D533-4CFF-9069-BA5D6CE478F8}" ItemName="JobSityChat.Infrastructure.Tests" ConfigurationId="Default" />
+        <StartupItem ItemId="{31A3BD73-2224-4E54-A9AF-EABED90D71F7}" ItemName="JobSityChat.Api" ConfigurationId="Default" />
+        <StartupItem ItemId="{7C05A205-7DC8-4438-829B-FB3BD1EE9A83}" ItemName="JobSityChat.StockBot" ConfigurationId="Default" />
       </Items>
     </MultiItemSolutionRunConfiguration>
   </MultiItemStartupConfigurations>

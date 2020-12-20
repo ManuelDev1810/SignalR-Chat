@@ -1,10 +1,19 @@
 ﻿<Properties StartupConfiguration="{8792605D-A5CF-47EE-A481-F87DE5C8D9A4}|Default">
   <MonoDevelop.Ide.ItemProperties.JobSityChat.UI PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.UI/Shared/ChatBox.razor">
+    <Files>
+      <File FileName="JobSityChat.UI/Shared/ChatBox.razor" Line="69" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="JobSityChat.UI" expanded="True" selected="True" />
+          <Node name="JobSityChat.UI" expanded="True">
+            <Node name="JobSityChat.UI" expanded="True">
+              <Node name="Shared" expanded="True">
+                <Node name="ChatBox.razor" selected="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>

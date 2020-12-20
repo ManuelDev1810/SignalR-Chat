@@ -96,6 +96,13 @@ using JobSityChat.UI.Data;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+using Microsoft.Extensions.Configuration;
+
+#line default
+#line hidden
+#nullable disable
     public partial class ChatBox : Microsoft.AspNetCore.Components.ComponentBase, IAsyncDisposable
     {
         #pragma warning disable 1998
@@ -104,7 +111,7 @@ using JobSityChat.UI.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+#line 48 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
        
 
     private HubConnection hubConnection;
@@ -115,26 +122,41 @@ using JobSityChat.UI.Data;
 
     protected override async Task OnInitializedAsync()
     {
-        //Setting the user
-        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        var user = authState.User;
-        userName = user.Identity.Name;
-
-        //Making the hub connection
-        hubConnection = new HubConnectionBuilder()
-        .WithUrl(NavigationManager.ToAbsoluteUri("https://localhost:5002/jobsity_chathub"))
-        .Build();
-
-        //Receving the message from the API
-        hubConnection.On<MessageViewModel>("ReceiveMessage", (model) =>
+        try
         {
-            messages.Add(model);
-            messages = messages.OrderByDescending(t => t.CreatedAt).ToList();
-            messages.TakeLast(50);
-            StateHasChanged();
-        });
+            //Setting the user
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+            userName = user.Identity.Name;
 
-        await hubConnection.StartAsync();
+            //Making the hub connection
+            hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri(Configuration["RabbitMQ:Host"]))
+            .Build();
+
+            //Receving the message from the API
+            hubConnection.On<MessageViewModel>("ReceiveMessage", (model) =>
+            {
+                messages.Add(model);
+                messages = messages.OrderByDescending(t => t.CreatedAt).ToList();
+                messages.TakeLast(50);
+                StateHasChanged();
+            });
+
+            await hubConnection.StartAsync();
+        }
+        catch (Exception)
+        {
+            messages.Add(new MessageViewModel()
+            {
+                Name = "JobSity Bot",
+                Message = "Looks like you are not properly connected to the chat queue, " +
+                          "please contact the technology support and tell them to check the Queue",
+                CreatedAt = DateTime.Now
+            });
+
+            StateHasChanged();
+        }
     }
 
     //Sending the message
@@ -166,6 +188,7 @@ using JobSityChat.UI.Data;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration Configuration { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
     }
