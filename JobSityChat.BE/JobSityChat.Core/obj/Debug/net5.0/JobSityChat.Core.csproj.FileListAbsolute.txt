@@ -2,7 +2,6 @@
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/bin/Debug/net5.0/JobSityChat.Core.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/bin/Debug/net5.0/ref/JobSityChat.Core.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/bin/Debug/net5.0/JobSityChat.Core.pdb
-/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/obj/Debug/net5.0/JobSityChat.Core.csprojAssemblyReference.cache
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/obj/Debug/net5.0/JobSityChat.Core.GeneratedMSBuildEditorConfig.editorconfig
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/obj/Debug/net5.0/JobSityChat.Core.AssemblyInfoInputs.cache
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/obj/Debug/net5.0/JobSityChat.Core.AssemblyInfo.cs

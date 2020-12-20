@@ -8,10 +8,19 @@
     ".NETCoreApp,Version=v5.0": {
       "JobSityChat.Infrastructure/1.0.0": {
         "dependencies": {
-          "JobSityChat.Core": "1.0.0"
+          "JobSityChat.Core": "1.0.0",
+          "TinyCsvParser": "2.6.0"
         },
         "runtime": {
           "JobSityChat.Infrastructure.dll": {}
+        }
+      },
+      "TinyCsvParser/2.6.0": {
+        "runtime": {
+          "lib/netstandard2.1/TinyCsvParser.dll": {
+            "assemblyVersion": "2.6.0.0",
+            "fileVersion": "2.6.0.0"
+          }
         }
       },
       "JobSityChat.Core/1.0.0": {
@@ -26,6 +35,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "TinyCsvParser/2.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QqfrCRuRT6+IP2UCxSuxvPrZlHgXUwQiSYJhTNwF589JjLlZZuXBUwggKCOhcImnYkpL0CMlBhqYkj85+Gptgg==",
+      "path": "tinycsvparser/2.6.0",
+      "hashPath": "tinycsvparser.2.6.0.nupkg.sha512"
     },
     "JobSityChat.Core/1.0.0": {
       "type": "project",

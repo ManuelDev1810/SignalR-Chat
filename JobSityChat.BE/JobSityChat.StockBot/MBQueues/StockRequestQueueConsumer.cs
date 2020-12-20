@@ -21,7 +21,10 @@ namespace JobSityChat.StockBot.MBQueues
         public StockRequestQueueConsumer(IStockHandler stockHandler, StockResponseQueueProducer producer)
         {
             //Opening the RabbitMQ connection
-            _factory = new() { HostName = "amqp://guest:guest@localhost:5672" };
+            _factory = new ConnectionFactory
+            {
+                Uri = new Uri("amqp://guest:guest@localhost:5672")
+            };
             _connection = _factory.CreateConnection();
             _channel = _connection.CreateModel();
 

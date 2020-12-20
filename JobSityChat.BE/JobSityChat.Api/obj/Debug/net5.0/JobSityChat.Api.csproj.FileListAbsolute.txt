@@ -15,11 +15,18 @@
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/Microsoft.OpenApi.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/Newtonsoft.Json.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/RabbitMQ.Client.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/System.Net.WebSockets.WebSocketProtocol.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/TinyCsvParser.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Core.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Infrastructure.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Infrastructure.pdb
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Core.pdb
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/obj/Debug/net5.0/JobSityChat.Api.csprojAssemblyReference.cache
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/obj/Debug/net5.0/JobSityChat.Api.GeneratedMSBuildEditorConfig.editorconfig
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/obj/Debug/net5.0/JobSityChat.Api.AssemblyInfoInputs.cache
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/obj/Debug/net5.0/JobSityChat.Api.AssemblyInfo.cs
@@ -35,8 +42,3 @@
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/obj/Debug/net5.0/ref/JobSityChat.Api.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/obj/Debug/net5.0/JobSityChat.Api.pdb
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/obj/Debug/net5.0/JobSityChat.Api.genruntimeconfig.cache
-/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Core.dll
-/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Infrastructure.dll
-/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Infrastructure.pdb
-/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Core.pdb
-/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/obj/Debug/net5.0/JobSityChat.Api.csprojAssemblyReference.cache
