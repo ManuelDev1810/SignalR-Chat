@@ -1,15 +1,31 @@
 ﻿<Properties StartupConfiguration="JobSityBE">
   <MonoDevelop.Ide.ItemProperties.JobSityChat.Api PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.ItemProperties.JobSityChat.StockBot PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.Infrastructure.Tests/CommandHandlerTests.cs">
+    <Files>
+      <File FileName="JobSityChat.Infrastructure.Tests/CommandHandlerTests.cs" Line="22" Column="10" />
+      <File FileName="JobSityChat.Infrastructure/Services/Handlers/CommandHandler.cs" Line="31" Column="10" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="JobSityChat.BE" expanded="True" selected="True" />
+          <Node name="JobSityChat.BE" expanded="True" selected="True">
+            <Node name="Tests" expanded="True">
+              <Node name="JobSityChat.Infrastructure.Tests" expanded="True">
+                <Node name="Dependencies" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="JobSityChat.Infrastructure" expanded="True">
+              <Node name="Services" expanded="True">
+                <Node name="Handlers" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Tests.JobSityChat.Infrastructure.Tests FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -18,8 +34,7 @@
   <MultiItemStartupConfigurations>
     <MultiItemSolutionRunConfiguration Id="JobSityBE" Name="JobSityBE">
       <Items>
-        <StartupItem ItemId="{31A3BD73-2224-4E54-A9AF-EABED90D71F7}" ItemName="JobSityChat.Api" ConfigurationId="Default" />
-        <StartupItem ItemId="{7C05A205-7DC8-4438-829B-FB3BD1EE9A83}" ItemName="JobSityChat.StockBot" ConfigurationId="Default" />
+        <StartupItem ItemId="{E523377A-D533-4CFF-9069-BA5D6CE478F8}" ItemName="JobSityChat.Infrastructure.Tests" ConfigurationId="Default" />
       </Items>
     </MultiItemSolutionRunConfiguration>
   </MultiItemStartupConfigurations>
