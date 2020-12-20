@@ -1,7 +1,9 @@
 ﻿@using Microsoft.AspNetCore.SignalR.Client
+@using JobSityChat.UI.Data
 @implements IAsyncDisposable
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
+
 
 <AuthorizeView>
     <Authorized>
@@ -30,6 +32,7 @@
 
 @foreach (var message in messages)
 {
+    <p>@message</p>
     //Waiting for API to be ready
 }
 
@@ -56,9 +59,9 @@
         .Build();
 
         //Receving the message from the API
-        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        hubConnection.On<MessageViewModel>("ReceiveMessage", (model) =>
         {
-            var recceiveMessage = $"{user}: {message}";
+            var recceiveMessage = $"{user}: {model.UserMessage}  y {model.CreatedAt}";
             messages.Add(recceiveMessage);
             StateHasChanged();
         });

@@ -89,6 +89,13 @@ using Microsoft.AspNetCore.SignalR.Client;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+using JobSityChat.UI.Data;
+
+#line default
+#line hidden
+#nullable disable
     public partial class ChatBox : Microsoft.AspNetCore.Components.ComponentBase, IAsyncDisposable
     {
         #pragma warning disable 1998
@@ -97,7 +104,7 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+#line 41 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
        
 
     private HubConnection hubConnection;
@@ -119,9 +126,9 @@ using Microsoft.AspNetCore.SignalR.Client;
         .Build();
 
         //Receving the message from the API
-        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        hubConnection.On<MessageViewModel>("ReceiveMessage", (model) =>
         {
-            var recceiveMessage = $"{user}: {message}";
+            var recceiveMessage = $"{user}: {model.UserMessage}  y {model.CreatedAt}";
             messages.Add(recceiveMessage);
             StateHasChanged();
         });

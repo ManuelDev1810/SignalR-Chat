@@ -27,7 +27,7 @@ namespace JobSityChat.StockBot.MBQueues
 
         public void SendStockData(Stock stock)
         {
-            _channel.QueueDeclare(queue: MBQueueConstants.STOCK_QUEUE_REQUEST,
+            _channel.QueueDeclare(queue: MBQueueConstants.STOCK_QUEUE_RESPONSE,
                durable: true,
                exclusive: false,
                autoDelete: false,

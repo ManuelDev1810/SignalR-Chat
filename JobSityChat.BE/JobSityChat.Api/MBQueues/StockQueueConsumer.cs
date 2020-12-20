@@ -67,10 +67,9 @@ namespace JobSityChat.Api.MBQueues
             };
 
             _channel.BasicConsume(queue: MBQueueConstants.STOCK_QUEUE_RESPONSE,
-                autoAck: true,
+                autoAck: false,
                 consumer: consumer);
         }
-
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -86,13 +85,11 @@ namespace JobSityChat.Api.MBQueues
             base.Dispose();
         }
 
-        public async Task SendResponse(string response)
+        public async Task SendResponse(string message)
         {
-            await _chatHub.Clients.All.SendAsync(ChatHubConstants.METHOD_CHAT_NAME, new MessageViewModel() {
-                UserName = "StockBot",
-                UserMessage = response,
-                CreatedAt = DateTime.Now
-            });
+            await _chatHub.Clients.All.SendAsync(ChatHubConstants.METHOD_CHAT_NAME,
+                new MessageViewModel { UserName = "StockBot", UserMessage = message, CreatedAt = DateTime.Now}
+            );
         }
     }
 }

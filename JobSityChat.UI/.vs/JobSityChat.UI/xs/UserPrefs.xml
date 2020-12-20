@@ -2,13 +2,15 @@
   <MonoDevelop.Ide.ItemProperties.JobSityChat.UI PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.UI/Shared/ChatBox.razor">
     <Files>
-      <File FileName="JobSityChat.UI/Shared/ChatBox.razor" Line="76" Column="40" />
+      <File FileName="JobSityChat.UI/Shared/ChatBox.razor" Line="60" Column="60" />
+      <File FileName="JobSityChat.UI/Data/MessageViewModel.cs" Line="8" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="JobSityChat.UI" expanded="True">
             <Node name="JobSityChat.UI" expanded="True">
+              <Node name="Data" expanded="True" />
               <Node name="Shared" expanded="True">
                 <Node name="ChatBox.razor" selected="True" />
               </Node>

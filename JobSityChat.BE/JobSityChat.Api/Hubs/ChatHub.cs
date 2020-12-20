@@ -35,10 +35,10 @@ namespace JobSityChat.Api.Hubs
 
             } else
             {
+                message = new MessageViewModel { UserMessage = "dfsdf", UserName = "ssf", CreatedAt = DateTime.Now };
                 //Saving the message to the database
+                await Clients.All.SendAsync(ChatHubConstants.METHOD_CHAT_NAME, message);
             }
-
-            await Clients.All.SendAsync(ChatHubConstants.METHOD_CHAT_NAME, message);
         }
 
 
