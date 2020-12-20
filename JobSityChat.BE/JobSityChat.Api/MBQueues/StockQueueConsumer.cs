@@ -12,22 +12,26 @@ using System.Threading.Tasks;
 using JobSityChat.Api.Models;
 using Microsoft.Extensions.Hosting;
 using System.Threading;
+using Microsoft.Extensions.Configuration;
 
 namespace JobSityChat.Api.MBQueues
 {
     public class StockQueueConsumer : BackgroundService, IStockQueueConsumer
     {
+        protected readonly IConfiguration _configuration;
         protected readonly ConnectionFactory _factory;
         protected readonly IConnection _connection;
         protected readonly IModel _channel;
         protected readonly IHubContext<ChatHub> _chatHub;
 
-        public StockQueueConsumer(IHubContext<ChatHub> chatHub)
+        public StockQueueConsumer(IHubContext<ChatHub> chatHub, IConfiguration configuration)
         {
+            _configuration = configuration;
+
             //Opening the RabbitMQ connection
             _factory = new ConnectionFactory
             {
-                Uri = new Uri("amqp://guest:guest@localhost:5672")
+                Uri = new Uri(_configuration["RabbitMQ:Host"])
             };
             _connection = _factory.CreateConnection();
             _channel = _connection.CreateModel();
@@ -52,14 +56,14 @@ namespace JobSityChat.Api.MBQueues
 
                 if (stock is not null)
                 {
-                    //sending the message through SignalR
+                    //sending the stock information through SignalR
                     string response = $"{stock.Symbol.ToUpper()} quote is {stock.Close:F} per share";
                     await SendResponse(response);
                 }
                 else
                 {
-                    //sending the message through SignalR
-                    string response = "We couldn't find any stock with that code";
+                    //sending a message indicating that couldn't find a response
+                    string response = ChatHubConstants.STOCK_NOT_FOUND;
                     await SendResponse(response);
                 }
 

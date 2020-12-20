@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.SignalR.Client
 @using JobSityChat.UI.Data
 @using Microsoft.Extensions.Configuration
+@using JobSityChat.UI.Persistent 
 
 @implements IAsyncDisposable
 @inject AuthenticationStateProvider AuthenticationStateProvider
@@ -64,7 +65,7 @@
 
             //Making the hub connection
             hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri(Configuration["RabbitMQ:Host"]))
+            .WithUrl(NavigationManager.ToAbsoluteUri(Configuration["SignalR:Route"]))
             .Build();
 
             //Receving the message from the API
@@ -82,9 +83,8 @@
         {
             messages.Add(new MessageViewModel()
             {
-                Name = "JobSity Bot",
-                Message = "Looks like you are not properly connected to the chat queue, " +
-                          "please contact the technology support and tell them to check the Queue",
+                Name = ChatConstants.JOB_SITY_BOT,
+                Message = ChatConstants.SIGNALR_NOT_CONNECTED,
                 CreatedAt = DateTime.Now
             });
 

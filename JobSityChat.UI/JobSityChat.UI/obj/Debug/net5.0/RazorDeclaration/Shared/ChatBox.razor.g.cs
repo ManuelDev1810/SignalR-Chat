@@ -103,6 +103,13 @@ using Microsoft.Extensions.Configuration;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+using JobSityChat.UI.Persistent;
+
+#line default
+#line hidden
+#nullable disable
     public partial class ChatBox : Microsoft.AspNetCore.Components.ComponentBase, IAsyncDisposable
     {
         #pragma warning disable 1998
@@ -111,7 +118,7 @@ using Microsoft.Extensions.Configuration;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 48 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+#line 49 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
        
 
     private HubConnection hubConnection;
@@ -131,7 +138,7 @@ using Microsoft.Extensions.Configuration;
 
             //Making the hub connection
             hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri(Configuration["RabbitMQ:Host"]))
+            .WithUrl(NavigationManager.ToAbsoluteUri(Configuration["SignalR:Route"]))
             .Build();
 
             //Receving the message from the API
@@ -149,9 +156,8 @@ using Microsoft.Extensions.Configuration;
         {
             messages.Add(new MessageViewModel()
             {
-                Name = "JobSity Bot",
-                Message = "Looks like you are not properly connected to the chat queue, " +
-                          "please contact the technology support and tell them to check the Queue",
+                Name = ChatConstants.JOB_SITY_BOT,
+                Message = ChatConstants.SIGNALR_NOT_CONNECTED,
                 CreatedAt = DateTime.Now
             });
 

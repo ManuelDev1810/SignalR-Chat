@@ -54,3 +54,10 @@
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.StockBot/obj/Debug/net5.0/ref/JobSityChat.StockBot.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.StockBot/obj/Debug/net5.0/JobSityChat.StockBot.pdb
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.StockBot/obj/Debug/net5.0/JobSityChat.StockBot.genruntimeconfig.cache
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.StockBot/bin/Debug/net5.0/Microsoft.Extensions.Configuration.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.StockBot/bin/Debug/net5.0/Microsoft.Extensions.Configuration.FileExtensions.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.StockBot/bin/Debug/net5.0/Microsoft.Extensions.Configuration.Json.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.StockBot/bin/Debug/net5.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.StockBot/bin/Debug/net5.0/Microsoft.Extensions.FileProviders.Physical.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.StockBot/bin/Debug/net5.0/Microsoft.Extensions.FileSystemGlobbing.dll
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.StockBot/bin/Debug/net5.0/appsettings.json

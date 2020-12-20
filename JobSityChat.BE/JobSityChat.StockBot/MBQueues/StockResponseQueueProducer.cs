@@ -2,6 +2,7 @@
 using System.Text;
 using JobSityChat.Core.Entities;
 using JobSityChat.Core.Persistent;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 
@@ -13,12 +14,16 @@ namespace JobSityChat.StockBot.MBQueues
         protected readonly IConnection _connection;
         protected readonly IModel _channel;
 
-        public StockResponseQueueProducer()
+        protected readonly IConfiguration _configuration;
+
+        public StockResponseQueueProducer(IConfiguration configuration)
         {
+            _configuration = configuration;
+
             //Opening the RabbitMQ connection
             _factory = new ConnectionFactory
             {
-                Uri = new Uri("amqp://guest:guest@localhost:5672")
+                Uri = new Uri(_configuration["RabbitMQ:Host"])
             };
 
             _connection = _factory.CreateConnection();
