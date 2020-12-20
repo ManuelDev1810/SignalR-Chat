@@ -14,7 +14,7 @@
         "outputPath": "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/manueldejesusguerrerovasquez/.nuget/NuGet/NuGet.Config"
+          "/Users/manueldejesusguerrerovasquez/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

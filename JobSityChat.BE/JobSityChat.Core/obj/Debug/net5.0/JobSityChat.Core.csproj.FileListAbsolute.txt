@@ -9,3 +9,4 @@
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/obj/Debug/net5.0/JobSityChat.Core.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/obj/Debug/net5.0/ref/JobSityChat.Core.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/obj/Debug/net5.0/JobSityChat.Core.pdb
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/obj/Debug/net5.0/JobSityChat.Core.csprojAssemblyReference.cache
