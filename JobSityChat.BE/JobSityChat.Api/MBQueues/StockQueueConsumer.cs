@@ -88,7 +88,7 @@ namespace JobSityChat.Api.MBQueues
         public async Task SendResponse(string message)
         {
             await _chatHub.Clients.All.SendAsync(ChatHubConstants.METHOD_CHAT_NAME,
-                new MessageViewModel { UserName = "StockBot", UserMessage = message, CreatedAt = DateTime.Now}
+                new MessageViewModel { Name = "StockBot", Message = message, CreatedAt = DateTime.Now}
             );
         }
     }

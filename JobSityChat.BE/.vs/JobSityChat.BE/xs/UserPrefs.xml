@@ -3,8 +3,7 @@
   <MonoDevelop.Ide.ItemProperties.JobSityChat.StockBot PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.Api/Hubs/ChatHub.cs">
     <Files>
-      <File FileName="JobSityChat.Api/MBQueues/StockQueueConsumer.cs" Line="86" Column="10" />
-      <File FileName="JobSityChat.Api/Hubs/ChatHub.cs" Line="40" Column="14" />
+      <File FileName="JobSityChat.Api/Hubs/ChatHub.cs" Line="38" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,21 +13,14 @@
               <Node name="Hubs" expanded="True">
                 <Node name="ChatHub.cs" selected="True" />
               </Node>
-              <Node name="MBQueues" expanded="True" />
               <Node name="Models" expanded="True" />
             </Node>
-            <Node name="JobSityChat.Core" expanded="True">
-              <Node name="Handlers" expanded="True">
-                <Node name="Interfaces" expanded="True" />
-              </Node>
-            </Node>
+            <Node name="JobSityChat.Core" expanded="True" />
             <Node name="JobSityChat.Infrastructure" expanded="True">
+              <Node name="Persistent" expanded="True" />
               <Node name="Services" expanded="True">
-                <Node name="Handlers" expanded="True" />
+                <Node name="Repository" expanded="True" />
               </Node>
-            </Node>
-            <Node name="JobSityChat.StockBot" expanded="True">
-              <Node name="MBQueues" expanded="True" />
             </Node>
           </Node>
         </State>

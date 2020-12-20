@@ -119,6 +119,7 @@ using JobSityChat.UI.Data;
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
         userName = user.Identity.Name;
+        userID = new Guid(user.Claims.FirstOrDefault().Value);
 
         //Making the hub connection
         hubConnection = new HubConnectionBuilder()
@@ -128,7 +129,7 @@ using JobSityChat.UI.Data;
         //Receving the message from the API
         hubConnection.On<MessageViewModel>("ReceiveMessage", (model) =>
         {
-            var recceiveMessage = $"{user}: {model.UserMessage}  y {model.CreatedAt}";
+            var recceiveMessage = $"{user}: {model.Message}  y {model.CreatedAt}";
             messages.Add(recceiveMessage);
             StateHasChanged();
         });
@@ -143,11 +144,12 @@ using JobSityChat.UI.Data;
     public Task Send()
     {
         var task =  hubConnection.SendAsync("SendMessage",
-                new {
-                    UserName = userName,
-                    UserMessage = userMessage,
-                    CreatedAt = DateTime.Now
-                });
+        new {
+            ID = new Guid(),
+            Name = userName,
+            Message = userMessage,
+            CreatedAt = DateTime.Now
+        });
 
         //Cleaning the message input
         userMessage = String.Empty;

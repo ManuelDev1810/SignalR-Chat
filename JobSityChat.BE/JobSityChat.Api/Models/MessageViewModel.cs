@@ -3,8 +3,9 @@ namespace JobSityChat.Api.Models
 {
     public class MessageViewModel
     {
-        public string UserName { get; set; }
-        public string UserMessage { get; set; }
+        public Guid ID { get; set; }
+        public string Name { get; set; }
+        public string Message { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }

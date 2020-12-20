@@ -6,12 +6,16 @@ using JobSityChat.Api.Hubs;
 using JobSityChat.Api.MBQueues;
 using JobSityChat.Core.Handlers.Interfaces;
 using JobSityChat.Core.MBQueues;
+using JobSityChat.Core.Repository.Interfaces;
+using JobSityChat.Infrastructure.Persistent;
 using JobSityChat.Infrastructure.Services.Handlers;
+using JobSityChat.Infrastructure.Services.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -59,9 +63,13 @@ namespace JobSityChat.Api
                 opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
                     new[] { "application/oncet-stream" });
             });
-
+            //Preparing the connection string
+            services.AddDbContext<JobsityChatDbContext>(opt => opt.UseSqlite(Configuration["ConnectionStrings:JobSityChat"],
+                x => x.MigrationsAssembly("JobSityChat.Infrastructure.Migrations")));
+            
             //Dependy Injections
             services.AddScoped<ICommandHandler, CommandHandler>();
+            services.AddScoped<IUserMessageRepository, UserMessageRepository>();
             services.AddSingleton<IStockQueueProducer, StockQueueProducer>();
             services.AddHostedService<StockQueueConsumer>();
         }

@@ -1,9 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using JobSityChat.Api.Models;
+using JobSityChat.Core.Entities;
 using JobSityChat.Core.Handlers.Interfaces;
 using JobSityChat.Core.MBQueues;
 using JobSityChat.Core.Persistent;
+using JobSityChat.Core.Repository.Interfaces;
 using Microsoft.AspNetCore.SignalR;
 
 namespace JobSityChat.Api.Hubs
@@ -12,19 +13,22 @@ namespace JobSityChat.Api.Hubs
     {
         private readonly ICommandHandler _commandHandler;
         private readonly IStockQueueProducer _stockQueueProducer;
+        private readonly IUserMessageRepository _userMessageRepository;
 
-        public ChatHub(ICommandHandler commandHandler, IStockQueueProducer stockQueueProducer)
+        public ChatHub(ICommandHandler commandHandler, IStockQueueProducer stockQueueProducer,
+                       IUserMessageRepository userMessageRepository)
         {
             _commandHandler = commandHandler;
             _stockQueueProducer = stockQueueProducer;
+            _userMessageRepository = userMessageRepository;
         }
 
         public async Task SendMessage(MessageViewModel message)
         {
-            if (_commandHandler.IsCommand(message.UserMessage))
+            if (_commandHandler.IsCommand(message.Message))
             {
                 //Send message to the queqe
-                _commandHandler.GetValues(message.UserMessage, (command, value) =>
+                _commandHandler.GetValues(message.Message, (command, value) =>
                {
                    if (command == CommandConstants.Stock)
                    {
@@ -35,12 +39,23 @@ namespace JobSityChat.Api.Hubs
 
             } else
             {
-                message = new MessageViewModel { UserMessage = "dfsdf", UserName = "ssf", CreatedAt = DateTime.Now };
                 //Saving the message to the database
-                await Clients.All.SendAsync(ChatHubConstants.METHOD_CHAT_NAME, message);
+                await SaveMessage(message);
             }
+
+            await Clients.All.SendAsync(ChatHubConstants.METHOD_CHAT_NAME, message);
         }
 
-
+        private async Task SaveMessage(MessageViewModel model)
+        {
+            await _userMessageRepository.AddAsync(new UserMessage
+            {
+                Message = model.Message,
+                ID = model.ID,
+                CreatedAt = model.CreatedAt,
+                Name = model.Name
+            });
+        }
     }
+
 }
