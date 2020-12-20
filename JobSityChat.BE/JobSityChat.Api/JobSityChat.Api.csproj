@@ -16,6 +16,7 @@
     <Folder Include="Hubs\" />
     <Folder Include="Models\" />
     <Folder Include="MBQueues\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JobSityChat.Infrastructure\JobSityChat.Infrastructure.csproj">

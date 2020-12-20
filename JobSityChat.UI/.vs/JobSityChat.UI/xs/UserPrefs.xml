@@ -4,7 +4,9 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="JobSityChat.UI" expanded="True" selected="True" />
+          <Node name="JobSityChat.UI" expanded="True">
+            <Node name="JobSityChat.UI" expanded="True" />
+          </Node>
         </State>
       </Pad>
     </Pads>

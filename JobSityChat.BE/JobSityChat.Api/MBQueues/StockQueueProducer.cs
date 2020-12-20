@@ -21,7 +21,7 @@ namespace JobSityChat.Api.MBQueues
             //Opening the RabbitMQ connection
             _factory = new ConnectionFactory
             {
-                Uri = new Uri("amqp://guest:guest@localhost:5672")
+                Uri = new Uri(_configuration["RabbitMQ:Host"])
             };
             _connection = _factory.CreateConnection();
             _channel = _connection.CreateModel();

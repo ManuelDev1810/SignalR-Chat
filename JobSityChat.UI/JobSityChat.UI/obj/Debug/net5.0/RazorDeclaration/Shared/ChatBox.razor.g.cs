@@ -96,6 +96,20 @@ using JobSityChat.UI.Data;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+using Microsoft.Extensions.Configuration;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+using JobSityChat.UI.Persistent;
+
+#line default
+#line hidden
+#nullable disable
     public partial class ChatBox : Microsoft.AspNetCore.Components.ComponentBase, IAsyncDisposable
     {
         #pragma warning disable 1998
@@ -104,7 +118,7 @@ using JobSityChat.UI.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+#line 49 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
        
 
     private HubConnection hubConnection;
@@ -115,26 +129,40 @@ using JobSityChat.UI.Data;
 
     protected override async Task OnInitializedAsync()
     {
-        //Setting the user
-        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        var user = authState.User;
-        userName = user.Identity.Name;
-
-        //Making the hub connection
-        hubConnection = new HubConnectionBuilder()
-        .WithUrl(NavigationManager.ToAbsoluteUri("https://localhost:5002/jobsity_chathub"))
-        .Build();
-
-        //Receving the message from the API
-        hubConnection.On<MessageViewModel>("ReceiveMessage", (model) =>
+        try
         {
-            messages.Add(model);
-            messages = messages.OrderByDescending(t => t.CreatedAt).ToList();
-            messages.TakeLast(50);
-            StateHasChanged();
-        });
+            //Setting the user
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+            userName = user.Identity.Name;
 
-        await hubConnection.StartAsync();
+            //Making the hub connection
+            hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri(Configuration["SignalR:Route"]))
+            .Build();
+
+            //Receving the message from the API
+            hubConnection.On<MessageViewModel>("ReceiveMessage", (model) =>
+            {
+                messages.Add(model);
+                messages = messages.OrderByDescending(t => t.CreatedAt).ToList();
+                messages.TakeLast(50);
+                StateHasChanged();
+            });
+
+            await hubConnection.StartAsync();
+        }
+        catch (Exception)
+        {
+            messages.Add(new MessageViewModel()
+            {
+                Name = ChatConstants.JOB_SITY_BOT,
+                Message = ChatConstants.SIGNALR_NOT_CONNECTED,
+                CreatedAt = DateTime.Now
+            });
+
+            StateHasChanged();
+        }
     }
 
     //Sending the message
@@ -166,6 +194,7 @@ using JobSityChat.UI.Data;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IConfiguration Configuration { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
     }

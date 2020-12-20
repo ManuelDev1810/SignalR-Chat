@@ -24,12 +24,20 @@ namespace JobSityChat.Infrastructure.Services.Repository
             return entity;
         }
 
-        public async Task<IReadOnlyList<UserMessage>> GetLast50Messages()
+        public async Task<IReadOnlyList<UserMessage>> GetMessages()
         {
             var messages = await _context.UserMessages.ToListAsync();
             messages = messages.OrderByDescending(t => t.CreatedAt).ToList();
-            messages.TakeLast(50);
             return messages;
         }
+
+        public async Task<IReadOnlyList<UserMessage>> GetLast50Messages()
+        {
+            var messages = await _context.UserMessages.ToListAsync();
+            messages = messages.TakeLast(50).ToList();
+            messages = messages.OrderByDescending(t => t.CreatedAt).ToList();
+            return messages;
+        }
+
     }
 }

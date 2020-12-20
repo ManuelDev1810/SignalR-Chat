@@ -134,3 +134,4 @@
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/obj/Debug/net5.0/ref/JobSityChat.Infrastructure.Tests.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/obj/Debug/net5.0/JobSityChat.Infrastructure.Tests.pdb
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/obj/Debug/net5.0/JobSityChat.Infrastructure.Tests.genruntimeconfig.cache
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/obj/Debug/net5.0/JobSityChat.Infrastructure.Tests.csprojAssemblyReference.cache

@@ -33,7 +33,7 @@ namespace JobSityChat.Infrastructure.Tests
         [InlineData("/that's the way to go", true)]
         [InlineData("//", true)]
         [InlineData("/price=", true)]
-        [InlineData("/shoes=nike", true)]
+        [InlineData("/shoes=maybe", true)]
         public void IsCommand_ShouldReturnTrueIfStartWithSlashAndLengthIsGreatherThanOne
             (string text, bool expected)
         {

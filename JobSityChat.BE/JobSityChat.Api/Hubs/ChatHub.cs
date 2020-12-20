@@ -47,7 +47,6 @@ namespace JobSityChat.Api.Hubs
                 //Getting the messages
                 await Clients.All.SendAsync(ChatHubConstants.METHOD_CHAT_NAME, message);
             }
-
         }
 
         private async Task SaveMessage(MessageViewModel model)

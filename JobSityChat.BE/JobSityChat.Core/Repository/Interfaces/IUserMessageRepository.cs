@@ -8,6 +8,7 @@ namespace JobSityChat.Core.Repository.Interfaces
     public interface IUserMessageRepository
     {
         Task<UserMessage> AddAsync(UserMessage entity);
+        Task<IReadOnlyList<UserMessage>> GetMessages();
         Task<IReadOnlyList<UserMessage>> GetLast50Messages();
     }
 }
