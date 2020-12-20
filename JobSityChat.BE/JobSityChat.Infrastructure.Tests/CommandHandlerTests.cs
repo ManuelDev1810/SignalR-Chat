@@ -8,8 +8,10 @@ namespace JobSityChat.Infrastructure.Tests
     {
         [Theory]
         [InlineData("/", false)]
-        [InlineData("dfgfdg", false)]
-        [InlineData("/dada", true)]
+        [InlineData("life_is_beautiful", false)]
+        [InlineData("<", false)]
+        [InlineData("^", false)]
+        [InlineData("/yes_it_is", true)]
         public void IsCommand_ShouldReturnFalseWhenDontStartWithSlashAndAnotherCharacter
             (string text, bool expected)
         {
@@ -27,8 +29,11 @@ namespace JobSityChat.Infrastructure.Tests
 
         [Theory]
         [InlineData("/", false)]
-        [InlineData("dfgfdg", false)]
-        [InlineData("/dada", true)]
+        [InlineData("try_to_be_the_best_of_you", false)]
+        [InlineData("/that's the way to go", true)]
+        [InlineData("//", true)]
+        [InlineData("/price=", true)]
+        [InlineData("/shoes=nike", true)]
         public void IsCommand_ShouldReturnTrueIfStartWithSlashAndLengthIsGreatherThanOne
             (string text, bool expected)
         {

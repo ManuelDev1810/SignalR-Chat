@@ -3,21 +3,29 @@
   <MonoDevelop.Ide.ItemProperties.JobSityChat.StockBot PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.Infrastructure.Tests/CommandHandlerTests.cs">
     <Files>
-      <File FileName="JobSityChat.Infrastructure.Tests/CommandHandlerTests.cs" Line="22" Column="10" />
-      <File FileName="JobSityChat.Infrastructure/Services/Handlers/CommandHandler.cs" Line="31" Column="10" />
+      <File FileName="JobSityChat.Infrastructure.Tests/StockHandlerTests.cs" Line="16" Column="48" />
+      <File FileName="JobSityChat.Infrastructure.Tests/CommandHandlerTests.cs" Line="11" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="JobSityChat.BE" expanded="True" selected="True">
+          <Node name="JobSityChat.BE" expanded="True">
             <Node name="Tests" expanded="True">
               <Node name="JobSityChat.Infrastructure.Tests" expanded="True">
-                <Node name="Dependencies" expanded="True" />
+                <Node name="CommandHandlerTests.cs" selected="True" />
               </Node>
             </Node>
-            <Node name="JobSityChat.Infrastructure" expanded="True">
-              <Node name="Services" expanded="True">
-                <Node name="Handlers" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="JobSityChat.BE" expanded="True">
+            <Node name="Tests" expanded="True">
+              <Node name="JobSityChat.Infrastructure.Tests" expanded="True">
+                <Node name="JobSityChat.Infrastructure.Tests" expanded="True">
+                  <Node name="StockHandlerTest" expanded="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -25,7 +33,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Tests.JobSityChat.Infrastructure.Tests FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Tests.JobSityChat.Infrastructure.Tests PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
