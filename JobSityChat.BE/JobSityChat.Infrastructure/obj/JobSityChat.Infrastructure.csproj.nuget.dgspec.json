@@ -14,7 +14,7 @@
         "outputPath": "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/manueldejesusguerrerovasquez/.config/NuGet/NuGet.Config"
+          "/Users/manueldejesusguerrerovasquez/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -66,7 +66,7 @@
         "outputPath": "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/manueldejesusguerrerovasquez/.config/NuGet/NuGet.Config"
+          "/Users/manueldejesusguerrerovasquez/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -93,6 +93,26 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "TinyCsvParser": {
+              "target": "Package",
+              "version": "[2.6.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -6,7 +6,6 @@ namespace JobSityChat.Core.Handlers.Interfaces
 {
     public interface IStockHandler
     {
-        bool IsStockCommand(string stockCommand);
-        Task<Stock> GetStock(string stockValue);
+        Task<Stock> GetStockData(string stockValue);
     }
 }

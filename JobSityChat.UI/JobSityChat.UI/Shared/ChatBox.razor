@@ -1,7 +1,9 @@
 ﻿@using Microsoft.AspNetCore.SignalR.Client
+@using JobSityChat.UI.Data
 @implements IAsyncDisposable
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
+
 
 <AuthorizeView>
     <Authorized>
@@ -19,6 +21,17 @@
                 </div>
             </div>
         </form>
+
+        @* Messages *@
+
+        @foreach (var message in messages)
+        {
+            <div class="d-flex">
+                <div class="p-2">@message.Name: </div>
+                <div class="p-2">@message.Message</div>
+                <div class="ml-auto p-2">@message.CreatedAt</div>
+            </div>
+        }
     </Authorized>
 
     <NotAuthorized>
@@ -26,19 +39,12 @@
     </NotAuthorized>
 </AuthorizeView>
 
-@* Messages *@
-
-@foreach (var message in messages)
-{
-    //Waiting for API to be ready
-}
-
 
 
 @code {
 
     private HubConnection hubConnection;
-    private List<string> messages = new List<string>();
+    private List<MessageViewModel> messages = new List<MessageViewModel>();
     private Guid userID;
     private string userName;
     private string userMessage;
@@ -56,31 +62,34 @@
         .Build();
 
         //Receving the message from the API
-        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        hubConnection.On<MessageViewModel>("ReceiveMessage", (model) =>
         {
-            var recceiveMessage = $"{user}: {message}";
-            messages.Add(recceiveMessage);
+            messages.Add(model);
+            messages = messages.OrderByDescending(t => t.CreatedAt).ToList();
+            messages.TakeLast(50);
             StateHasChanged();
         });
 
         await hubConnection.StartAsync();
-
-        //NOTE
-        //REDIRECT TO ERROR PAGE WHEN AN ERROR OCCUR
     }
 
     //Sending the message
     public Task Send()
     {
-        userMessage = String.Empty;
-        return hubConnection.SendAsync("SendMessage",
-                new {
-                    UserName = userName,
-                    UserMessage = userMessage,
-                    CreatedAt = DateTime.Now
-                });
-    }
+        var task = hubConnection.SendAsync("SendMessage",
+        new
+        {
+            ID = new Guid(),
+            Name = userName,
+            Message = userMessage,
+            CreatedAt = DateTime.Now
+        });
 
+        //Cleaning the message input
+        userMessage = String.Empty;
+
+        return task;
+    }
 
     public bool IsConnected =>
         hubConnection.State == HubConnectionState.Connected;
@@ -89,5 +98,4 @@
     {
         await hubConnection.DisposeAsync();
     }
-
 }

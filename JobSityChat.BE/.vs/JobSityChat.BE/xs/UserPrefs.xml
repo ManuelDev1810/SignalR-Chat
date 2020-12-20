@@ -1,41 +1,29 @@
-﻿<Properties StartupConfiguration="{8C900D28-8B3F-4937-9D27-68E0A96A64EC}|Default">
+﻿<Properties StartupConfiguration="JobSityBE">
   <MonoDevelop.Ide.ItemProperties.JobSityChat.Api PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="JobSityChat.Api/Startup.cs">
-    <Files>
-      <File FileName="JobSityChat.Infrastructure/Services/Handlers/StockHandler.cs" Line="17" Column="10" />
-      <File FileName="JobSityChat.Api/Hubs/ChatHub.cs" Line="12" Column="54" />
-      <File FileName="JobSityChat.Api/Startup.cs" Line="62" Column="63" />
-    </Files>
+  <MonoDevelop.Ide.ItemProperties.JobSityChat.StockBot PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="JobSityChat.BE" expanded="True">
-            <Node name="JobSityChat.Api" expanded="True">
-              <Node name="Hubs" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
-            </Node>
-            <Node name="JobSityChat.Core" expanded="True">
-              <Node name="Handlers" expanded="True">
-                <Node name="Interfaces" expanded="True" />
-              </Node>
-              <Node name="Persistent" expanded="True" />
-            </Node>
-            <Node name="JobSityChat.Infrastructure" expanded="True">
-              <Node name="Services" expanded="True">
-                <Node name="Handlers" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
+          <Node name="JobSityChat.BE" expanded="True" />
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.JobSityChat.Core FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.JobSityChat.Infrastructure FirstBuild="True" />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="JobSityBE" Name="JobSityBE">
+      <Items>
+        <StartupItem ItemId="{31A3BD73-2224-4E54-A9AF-EABED90D71F7}" ItemName="JobSityChat.Api" ConfigurationId="Default" />
+        <StartupItem ItemId="{7C05A205-7DC8-4438-829B-FB3BD1EE9A83}" ItemName="JobSityChat.StockBot" ConfigurationId="Default" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
 </Properties>

@@ -8,8 +8,18 @@
     <Folder Include="Services\" />
     <Folder Include="Services\Handlers\" />
     <Folder Include="Services\Repository\" />
+    <Folder Include="Persistent\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JobSityChat.Core\JobSityChat.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="TinyCsvParser" Version="2.6.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
   </ItemGroup>
 </Project>

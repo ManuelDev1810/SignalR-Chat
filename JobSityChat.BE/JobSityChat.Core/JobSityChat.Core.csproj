@@ -11,5 +11,6 @@
     <Folder Include="Repository\Interfaces\" />
     <Folder Include="Handlers\" />
     <Folder Include="Handlers\Interfaces\" />
+    <Folder Include="MBQueues\" />
   </ItemGroup>
 </Project>

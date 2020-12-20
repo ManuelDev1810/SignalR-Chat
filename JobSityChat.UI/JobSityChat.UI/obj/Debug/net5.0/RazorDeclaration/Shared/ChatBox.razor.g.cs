@@ -89,6 +89,13 @@ using Microsoft.AspNetCore.SignalR.Client;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+using JobSityChat.UI.Data;
+
+#line default
+#line hidden
+#nullable disable
     public partial class ChatBox : Microsoft.AspNetCore.Components.ComponentBase, IAsyncDisposable
     {
         #pragma warning disable 1998
@@ -97,13 +104,14 @@ using Microsoft.AspNetCore.SignalR.Client;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+#line 44 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
        
 
     private HubConnection hubConnection;
-    private List<string> messages = new List<string>();
-    private string userMessage;
+    private List<MessageViewModel> messages = new List<MessageViewModel>();
+    private Guid userID;
     private string userName;
+    private string userMessage;
 
     protected override async Task OnInitializedAsync()
     {
@@ -114,31 +122,38 @@ using Microsoft.AspNetCore.SignalR.Client;
 
         //Making the hub connection
         hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri("https://localhost:5002/jobsity_chathub"))
-            .Build();
+        .WithUrl(NavigationManager.ToAbsoluteUri("https://localhost:5002/jobsity_chathub"))
+        .Build();
 
         //Receving the message from the API
-        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        hubConnection.On<MessageViewModel>("ReceiveMessage", (model) =>
         {
-            var recceiveMessage = $"{user}: {message}";
-            messages.Add(recceiveMessage);
+            messages.Add(model);
+            messages = messages.OrderByDescending(t => t.CreatedAt).ToList();
+            messages.TakeLast(50);
             StateHasChanged();
         });
 
         await hubConnection.StartAsync();
-
-        //NOTE
-        //REDIRECT TO ERROR PAGE WHEN AN ERROR OCCUR
     }
 
     //Sending the message
     public Task Send()
     {
-        userMessage = String.Empty;
-        return hubConnection.SendAsync("SendMessage",
-                new { UserName = userName, UserMessage = userMessage, CreatedAt = DateTime.Now});
-    }
+        var task = hubConnection.SendAsync("SendMessage",
+        new
+        {
+            ID = new Guid(),
+            Name = userName,
+            Message = userMessage,
+            CreatedAt = DateTime.Now
+        });
 
+        //Cleaning the message input
+        userMessage = String.Empty;
+
+        return task;
+    }
 
     public bool IsConnected =>
         hubConnection.State == HubConnectionState.Connected;
@@ -147,7 +162,6 @@ using Microsoft.AspNetCore.SignalR.Client;
     {
         await hubConnection.DisposeAsync();
     }
-
 
 #line default
 #line hidden
