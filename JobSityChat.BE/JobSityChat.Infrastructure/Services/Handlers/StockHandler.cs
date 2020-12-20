@@ -17,6 +17,7 @@ namespace JobSityChat.Infrastructure.Services.Handlers
         {
             //Constructing the url
             string url = $"https://stooq.com/q/l/?s={stockValue}&f=sd2t2ohlcv&h&e=csv";
+            //string url = "https://stooq.com/q/l/?s=aapl.us&f=sd2t2ohlcv&h&e=csv";
 
             //Maquint the request
             HttpClient client = new HttpClient();

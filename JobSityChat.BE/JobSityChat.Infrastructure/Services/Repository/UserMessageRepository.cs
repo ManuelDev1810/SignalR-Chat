@@ -26,7 +26,10 @@ namespace JobSityChat.Infrastructure.Services.Repository
 
         public async Task<IReadOnlyList<UserMessage>> GetLast50Messages()
         {
-            return await _context.UserMessages.OrderBy(t => t.CreatedAt).TakeLast(50).ToListAsync();
+            var messages = await _context.UserMessages.ToListAsync();
+            messages = messages.OrderByDescending(t => t.CreatedAt).ToList();
+            messages.TakeLast(50);
+            return messages;
         }
     }
 }

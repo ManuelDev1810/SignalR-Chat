@@ -21,6 +21,17 @@
                 </div>
             </div>
         </form>
+
+        @* Messages *@
+
+        @foreach (var message in messages)
+        {
+            <div class="d-flex">
+                <div class="p-2">@message.Name: </div>
+                <div class="p-2">@message.Message</div>
+                <div class="ml-auto p-2">@message.CreatedAt</div>
+            </div>
+        }
     </Authorized>
 
     <NotAuthorized>
@@ -28,20 +39,12 @@
     </NotAuthorized>
 </AuthorizeView>
 
-@* Messages *@
-
-@foreach (var message in messages)
-{
-    <p>@message</p>
-    //Waiting for API to be ready
-}
-
 
 
 @code {
 
     private HubConnection hubConnection;
-    private List<string> messages = new List<string>();
+    private List<MessageViewModel> messages = new List<MessageViewModel>();
     private Guid userID;
     private string userName;
     private string userMessage;
@@ -52,7 +55,6 @@
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
         userName = user.Identity.Name;
-        userID = new Guid(user.Claims.FirstOrDefault().Value);
 
         //Making the hub connection
         hubConnection = new HubConnectionBuilder()
@@ -62,22 +64,21 @@
         //Receving the message from the API
         hubConnection.On<MessageViewModel>("ReceiveMessage", (model) =>
         {
-            var recceiveMessage = $"{user}: {model.Message}  y {model.CreatedAt}";
-            messages.Add(recceiveMessage);
+            messages.Add(model);
+            messages = messages.OrderByDescending(t => t.CreatedAt).ToList();
+            messages.TakeLast(50);
             StateHasChanged();
         });
 
         await hubConnection.StartAsync();
-
-        //NOTE
-        //REDIRECT TO ERROR PAGE WHEN AN ERROR OCCUR
     }
 
     //Sending the message
     public Task Send()
     {
-        var task =  hubConnection.SendAsync("SendMessage",
-        new {
+        var task = hubConnection.SendAsync("SendMessage",
+        new
+        {
             ID = new Guid(),
             Name = userName,
             Message = userMessage,
@@ -90,7 +91,6 @@
         return task;
     }
 
-
     public bool IsConnected =>
         hubConnection.State == HubConnectionState.Connected;
 
@@ -98,5 +98,4 @@
     {
         await hubConnection.DisposeAsync();
     }
-
 }

@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using JobSityChat.Api.Models;
 using JobSityChat.Core.Entities;
 using JobSityChat.Core.Handlers.Interfaces;
@@ -41,9 +43,11 @@ namespace JobSityChat.Api.Hubs
             {
                 //Saving the message to the database
                 await SaveMessage(message);
+
+                //Getting the messages
+                await Clients.All.SendAsync(ChatHubConstants.METHOD_CHAT_NAME, message);
             }
 
-            await Clients.All.SendAsync(ChatHubConstants.METHOD_CHAT_NAME, message);
         }
 
         private async Task SaveMessage(MessageViewModel model)
@@ -57,5 +61,4 @@ namespace JobSityChat.Api.Hubs
             });
         }
     }
-
 }

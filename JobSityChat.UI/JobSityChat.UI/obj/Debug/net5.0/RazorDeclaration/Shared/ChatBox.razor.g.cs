@@ -104,11 +104,11 @@ using JobSityChat.UI.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
+#line 44 "/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.UI/JobSityChat.UI/Shared/ChatBox.razor"
        
 
     private HubConnection hubConnection;
-    private List<string> messages = new List<string>();
+    private List<MessageViewModel> messages = new List<MessageViewModel>();
     private Guid userID;
     private string userName;
     private string userMessage;
@@ -119,7 +119,6 @@ using JobSityChat.UI.Data;
         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
         userName = user.Identity.Name;
-        userID = new Guid(user.Claims.FirstOrDefault().Value);
 
         //Making the hub connection
         hubConnection = new HubConnectionBuilder()
@@ -129,22 +128,21 @@ using JobSityChat.UI.Data;
         //Receving the message from the API
         hubConnection.On<MessageViewModel>("ReceiveMessage", (model) =>
         {
-            var recceiveMessage = $"{user}: {model.Message}  y {model.CreatedAt}";
-            messages.Add(recceiveMessage);
+            messages.Add(model);
+            messages = messages.OrderByDescending(t => t.CreatedAt).ToList();
+            messages.TakeLast(50);
             StateHasChanged();
         });
 
         await hubConnection.StartAsync();
-
-        //NOTE
-        //REDIRECT TO ERROR PAGE WHEN AN ERROR OCCUR
     }
 
     //Sending the message
     public Task Send()
     {
-        var task =  hubConnection.SendAsync("SendMessage",
-        new {
+        var task = hubConnection.SendAsync("SendMessage",
+        new
+        {
             ID = new Guid(),
             Name = userName,
             Message = userMessage,
@@ -157,7 +155,6 @@ using JobSityChat.UI.Data;
         return task;
     }
 
-
     public bool IsConnected =>
         hubConnection.State == HubConnectionState.Connected;
 
@@ -165,7 +162,6 @@ using JobSityChat.UI.Data;
     {
         await hubConnection.DisposeAsync();
     }
-
 
 #line default
 #line hidden
