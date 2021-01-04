@@ -23,6 +23,7 @@ LinkedIn: https://www.linkedin.com/in/manuel-guerrero-070144166/
 - Download the project or clone it
 - Install Docker, you can have it from here: (https://www.docker.com/products/docker-desktop)
 - Use Docker to run the application, the command will be like this:
+
   ````
 	docker-compose up --build
 	````
