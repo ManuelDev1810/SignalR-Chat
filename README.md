@@ -32,7 +32,4 @@ LinkedIn: https://www.linkedin.com/in/manuel-guerrero-070144166/
 - Register a new account and confirm the email.
 - Go to the home page and start messaging.
 
-
-**Note:** If you see a message that said that there is a problem with the Queue, that means that the client and the backend could not be connected through SingalR, you need to run the Api first and then the client.
-
 Here I have private and short video of how run the application: https://youtu.be/rrgLKBNStOE
