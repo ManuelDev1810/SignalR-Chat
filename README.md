@@ -32,5 +32,3 @@ LinkedIn: https://www.linkedin.com/in/manuel-guerrero-070144166/
 
 - Register a new account and confirm the email.
 - Go to the home page and start messaging.
-
-Here I have private and short video of how run the application: https://youtu.be/rrgLKBNStOE
