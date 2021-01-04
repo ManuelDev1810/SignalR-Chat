@@ -1,5 +1,6 @@
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/appsettings.Development.json
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/appsettings.json
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.db
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Api.deps.json
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Api.runtimeconfig.json
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Api/bin/Debug/net5.0/JobSityChat.Api.runtimeconfig.dev.json

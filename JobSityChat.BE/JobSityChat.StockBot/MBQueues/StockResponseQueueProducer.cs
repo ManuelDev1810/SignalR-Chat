@@ -23,7 +23,7 @@ namespace JobSityChat.StockBot.MBQueues
             //Opening the RabbitMQ connection
             _factory = new ConnectionFactory
             {
-                Uri = new Uri(_configuration["RabbitMQ:Host"])
+                HostName = _configuration["RabbitMQ:Host"]
             };
 
             _connection = _factory.CreateConnection();

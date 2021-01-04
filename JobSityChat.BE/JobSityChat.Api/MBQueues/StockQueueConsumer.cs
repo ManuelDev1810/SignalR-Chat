@@ -31,7 +31,7 @@ namespace JobSityChat.Api.MBQueues
             //Opening the RabbitMQ connection
             _factory = new ConnectionFactory
             {
-                Uri = new Uri(_configuration["RabbitMQ:Host"])
+                HostName = _configuration["RabbitMQ:Host"]
             };
             _connection = _factory.CreateConnection();
             _channel = _connection.CreateModel();
@@ -91,7 +91,7 @@ namespace JobSityChat.Api.MBQueues
 
         public async Task SendResponse(string message)
         {
-            await _chatHub.Clients.All.SendAsync(ChatHubConstants.METHOD_CHAT_NAME,
+            await _chatHub.Clients.All.SendAsync(ChatHubConstants.CHAT_HUB_RECEIVER,
                 new MessageViewModel { Name = "StockBot", Message = message, CreatedAt = DateTime.Now}
             );
         }

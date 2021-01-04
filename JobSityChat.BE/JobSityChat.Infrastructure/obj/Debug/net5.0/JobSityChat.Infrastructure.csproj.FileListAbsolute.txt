@@ -1,3 +1,4 @@
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure/bin/Debug/net5.0/JobSityChat.db
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure/bin/Debug/net5.0/JobSityChat.Infrastructure.deps.json
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure/bin/Debug/net5.0/JobSityChat.Infrastructure.runtimeconfig.json
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure/bin/Debug/net5.0/JobSityChat.Infrastructure.runtimeconfig.dev.json

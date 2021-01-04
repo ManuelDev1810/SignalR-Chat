@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using JobSityChat.Core.MBQueues;
 using JobSityChat.Core.Persistent;
 using Microsoft.Extensions.Configuration;
@@ -21,7 +20,7 @@ namespace JobSityChat.Api.MBQueues
             //Opening the RabbitMQ connection
             _factory = new ConnectionFactory
             {
-                Uri = new Uri(_configuration["RabbitMQ:Host"])
+                HostName = _configuration["RabbitMQ:Host"]
             };
             _connection = _factory.CreateConnection();
             _channel = _connection.CreateModel();

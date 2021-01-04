@@ -1,3 +1,4 @@
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/bin/Debug/net5.0/JobSityChat.db
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/bin/Debug/net5.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/bin/Debug/net5.0/xunit.runner.reporters.netcoreapp10.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/bin/Debug/net5.0/xunit.runner.utility.netcoreapp10.dll
@@ -125,6 +126,7 @@
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/bin/Debug/net5.0/JobSityChat.Infrastructure.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/bin/Debug/net5.0/JobSityChat.Infrastructure.pdb
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/bin/Debug/net5.0/JobSityChat.Core.pdb
+/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/obj/Debug/net5.0/JobSityChat.Infrastructure.Tests.csprojAssemblyReference.cache
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/obj/Debug/net5.0/JobSityChat.Infrastructure.Tests.GeneratedMSBuildEditorConfig.editorconfig
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/obj/Debug/net5.0/JobSityChat.Infrastructure.Tests.AssemblyInfoInputs.cache
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/obj/Debug/net5.0/JobSityChat.Infrastructure.Tests.AssemblyInfo.cs
@@ -134,4 +136,3 @@
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/obj/Debug/net5.0/ref/JobSityChat.Infrastructure.Tests.dll
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/obj/Debug/net5.0/JobSityChat.Infrastructure.Tests.pdb
 /Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/obj/Debug/net5.0/JobSityChat.Infrastructure.Tests.genruntimeconfig.cache
-/Users/manueldejesusguerrerovasquez/Projects/JobSityChat/JobSityChat.BE/JobSityChat.Infrastructure.Tests/obj/Debug/net5.0/JobSityChat.Infrastructure.Tests.csprojAssemblyReference.cache

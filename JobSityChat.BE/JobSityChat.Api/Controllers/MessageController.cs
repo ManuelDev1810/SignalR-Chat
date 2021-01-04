@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using JobSityChat.Core.Repository.Interfaces;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
