@@ -18,7 +18,7 @@ LinkedIn: https://www.linkedin.com/in/manuel-guerrero-070144166/
 - Docker
 - Blazor Server (With .Net 5)
 
-## Instrucctions to install the application :
+## Instrucctions to install and run the application :
 
 - Download the project or clone it
 - Install Docker, you can have it from here: (https://www.docker.com/products/docker-desktop)
