@@ -123,7 +123,6 @@ using JobSityChat.UI.Persistent;
 
     private HubConnection hubConnection;
     private List<MessageViewModel> messages = new List<MessageViewModel>();
-    private Guid userID;
     private string userName;
     private string userMessage;
 
@@ -138,11 +137,15 @@ using JobSityChat.UI.Persistent;
 
             //Making the hub connection
             hubConnection = new HubConnectionBuilder()
-            .WithUrl(NavigationManager.ToAbsoluteUri(Configuration["SignalR:Route"]))
+            .WithUrl(NavigationManager.ToAbsoluteUri(Configuration["SignalR:Route"]), options =>
+            {
+                options.AccessTokenProvider = () => Task.FromResult("testing");
+            })
             .Build();
 
+
             //Receving the message from the API
-            hubConnection.On<MessageViewModel>("ReceiveMessage", (model) =>
+            hubConnection.On<MessageViewModel>(ChatConstants.CHAT_HUB_RECEIVER, (model) =>
             {
                 messages.Add(model);
                 messages = messages.OrderByDescending(t => t.CreatedAt).ToList();
@@ -168,7 +171,7 @@ using JobSityChat.UI.Persistent;
     //Sending the message
     public Task Send()
     {
-        var task = hubConnection.SendAsync("SendMessage",
+        var task = hubConnection.SendAsync(ChatConstants.CHAT_HUB_SENDER,
         new
         {
             ID = new Guid(),
@@ -179,7 +182,6 @@ using JobSityChat.UI.Persistent;
 
         //Cleaning the message input
         userMessage = String.Empty;
-
         return task;
     }
 

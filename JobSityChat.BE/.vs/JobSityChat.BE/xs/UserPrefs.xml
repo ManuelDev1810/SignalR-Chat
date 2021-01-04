@@ -5,17 +5,8 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="JobSityChat.BE" expanded="True" />
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="JobSityChat.BE" expanded="True" selected="True">
-            <Node name="Tests" expanded="True">
-              <Node name="JobSityChat.Infrastructure.Tests" expanded="True">
-                <Node name="JobSityChat.Infrastructure.Tests" expanded="True" />
-              </Node>
-            </Node>
+          <Node name="JobSityChat.BE" expanded="True">
+            <Node name="Tests" selected="True" />
           </Node>
         </State>
       </Pad>

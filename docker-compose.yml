@@ -1,0 +1,42 @@
+ version: '3'
+ services: 
+    chatui:
+      build: 
+        context: ./JobSityChat.UI/JobSityChat.UI
+        dockerfile: ./Dockerfile
+      ports: 
+        - 8181:80
+      depends_on:
+        - chatapi
+      restart: unless-stopped
+
+    chatapi:
+      build: 
+        context: ./JobSityChat.BE
+        dockerfile: ./JobSityChat.Api/Dockerfile
+      ports: 
+        - 8282:80
+      depends_on:
+        - rabbitmq
+        - sqlite
+        - chatstockbot
+      restart: unless-stopped
+
+    chatstockbot:
+      build: 
+        context: ./JobSityChat.BE
+        dockerfile: ./JobSityChat.StockBot/Dockerfile
+      depends_on:
+        - rabbitmq
+      restart: unless-stopped
+    
+    sqlite:
+      image: keinos/sqlite3:latest
+
+    rabbitmq:
+        image: rabbitmq:3-management
+        hostname: localhost
+        container_name: rabbitmq
+        ports:
+          - 5672:5672 
+          - 15672:15672

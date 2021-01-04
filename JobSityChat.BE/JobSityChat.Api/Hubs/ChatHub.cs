@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using JobSityChat.Api.Models;
 using JobSityChat.Core.Entities;
 using JobSityChat.Core.Handlers.Interfaces;
@@ -27,6 +25,7 @@ namespace JobSityChat.Api.Hubs
 
         public async Task SendMessage(MessageViewModel message)
         {
+         
             if (_commandHandler.IsCommand(message.Message))
             {
                 //Send message to the queqe
@@ -45,7 +44,7 @@ namespace JobSityChat.Api.Hubs
                 await SaveMessage(message);
 
                 //Getting the messages
-                await Clients.All.SendAsync(ChatHubConstants.METHOD_CHAT_NAME, message);
+                await Clients.All.SendAsync(ChatHubConstants.CHAT_HUB_RECEIVER, message);
             }
         }
 

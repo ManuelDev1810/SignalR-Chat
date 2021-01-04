@@ -1,5 +1,4 @@
-﻿using System;
-namespace JobSityChat.Core.Persistent
+﻿namespace JobSityChat.Core.Persistent
 {
     public class MBQueueConstants
     {
